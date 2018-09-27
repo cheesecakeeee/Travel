@@ -3,8 +3,7 @@
     <div class="title">热销推荐</div>
     <ul>
       <li class="item" v-for="item in recommendList" :key="item.id">
-
-          <img :src="item.imgUrl" class="item-img" alt="">
+        <img :src="item.imgUrl" class="item-img" alt=""/>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
           <p class="item-desc">{{item.desc}}</p>
@@ -69,7 +68,7 @@
       height: 1.7rem
       padding: .1rem
     .item-info
-      float: 1;
+      flex: 1;
       min-width:0
       padding: .1rem
       .item-title
@@ -82,10 +81,9 @@
         ellipsis()
       .item-button
         line-height: .44rem
-        margin-top: .1rem
+        margin-top: .16rem
         background: #ff9300
         padding 0 .2rem
         border-radius .06rem
         color: #fff
-
 </style>

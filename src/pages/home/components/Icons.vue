@@ -18,6 +18,10 @@
     name: 'HomeIcons',
     data(){
       return {
+        swiperOption:{
+          pagination:'.swiper-pagination',
+          autoplay: false,
+        },
         iconList:[
           {
             id:'0001',
