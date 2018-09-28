@@ -1,10 +1,10 @@
 <template>
   <div>
-    <home-header/>
-    <home-swiper/>
-    <home-icons/>
-    <home-recommend/>
-    <home-weekend/>
+    <home-header :city="city" />
+    <home-swiper :list='swiperList' />
+    <home-icons :list="iconList"/>
+    <home-recommend :list="recommendList"/>
+    <home-weekend :list="weekendList"/>
   </div>
 </template>
 
@@ -20,6 +20,15 @@
 
   export default {
     name: 'home',
+    data(){
+      return {
+        city:'',
+        swiperList:[],
+        iconList:[],
+        recommendList:[],
+        weekendList:[]
+      }
+    },
     components:{
       HomeHeader,
       HomeSwiper,
@@ -33,12 +42,22 @@
           .then(this.getHomeInfoSucc)
       },
       getHomeInfoSucc(res){
-        console.log(res)
+        res = res.data
+        if(res.ret && res.data){
+          const data = res.data
+          this.city = data.city
+          this.swiperList = data.swiperList
+          this.iconList = data.iconList
+          this.recommendList = data.recommendList
+          this.weekendList = data.weekendList
+        }
+
       }
     },
-    mounted(){
+    mounted(){    //页面挂载el后执行getHomeInfo方法
       this.getHomeInfo()
     }
+
   }
 </script>
 
