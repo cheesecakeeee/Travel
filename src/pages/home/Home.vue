@@ -1,6 +1,6 @@
 <template>
   <div>
-    <home-header :city="city" />
+   <home-header  />  <!--:city="city"-->
     <home-swiper :list='swiperList' />
     <home-icons :list="iconList"/>
     <home-recommend :list="recommendList"/>
@@ -22,7 +22,7 @@
     name: 'home',
     data(){
       return {
-        city:'',
+        // city:'',
         swiperList:[],
         iconList:[],
         recommendList:[],
