@@ -1,13 +1,18 @@
 <template>
     <div>
-      detail
+      <detail-banner/>
     </div>
 </template>
 
 <script>
-    export default {
-        name: "Detail"
+  import DetailBanner from './components/Banner'
+  export default {
+    name: "Detail",
+    components:{
+      DetailBanner
     }
+
+  }
 </script>
 
 <style scoped lang="stylus">
